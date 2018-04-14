@@ -19,6 +19,9 @@
 ;; cursor setting
 (blink-cursor-mode 0)
 
+(el-get-bundle rainbow-delimiters
+  (add-hook 'foo-mode-hook #'rainbow-delimiters-mode))
+
 (el-get-bundle! zk-phi/sky-color-clock
   (sky-color-clock-initialize 35)
   (setq sky-color-clock-format "%H:%M")
