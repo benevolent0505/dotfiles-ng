@@ -27,6 +27,9 @@ tramp
 # el-get packages
 /el-get/
 
+# auto-complete dat file
+ac-comphist.dat
+
 # reftex files
 *.rel
 
