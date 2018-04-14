@@ -20,7 +20,20 @@
 (blink-cursor-mode 0)
 
 (el-get-bundle rainbow-delimiters
-  (add-hook 'foo-mode-hook #'rainbow-delimiters-mode))
+  (add-hook 'prog-mode-hook #'rainbow-delimiters-mode)
+
+  ;; 括弧の色を強調する設定
+  (require 'cl-lib)
+  (require 'color)
+  (defun rainbow-delimiters-using-stronger-colors ()
+    (interactive)
+    (defvar rainbow-delimiters-max-face-count)
+    (cl-loop
+      for index from 1 to rainbow-delimiters-max-face-count
+      do
+      (let ((face (intern (format "rainbow-delimiters-depth-%d-face" index))))
+        (cl-callf color-saturate-name (face-foreground face) 30))))
+  (add-hook 'emacs-startup-hook 'rainbow-delimiters-using-stronger-colors))
 
 (el-get-bundle! zk-phi/sky-color-clock
   (sky-color-clock-initialize 35)
