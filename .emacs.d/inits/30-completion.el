@@ -1,4 +1,5 @@
 (el-get-bundle! company
+  :type github :pkgname "company-mode/company-mode"
   (add-hook 'after-init-hook 'global-company-mode)
 
   (setq company-idle-delay 0)
@@ -13,3 +14,7 @@
     (define-key company-active-map (kbd "C-m") 'company-complete-selection)
 
     (define-key company-active-map (kbd "C-s") 'company-filter-candidates))
+
+  (custom-set-variables
+    '(package-selected-packages (quote (company))))
+  (custom-set-faces))
