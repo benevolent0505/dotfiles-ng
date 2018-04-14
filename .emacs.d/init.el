@@ -16,7 +16,7 @@
 (package-initialize)
 
 ;; init-loader settings
-(el-get-bundle emacs-jp/init-loader
+(el-get-bundle! emacs-jp/init-loader
   (setq-default init-loader-show-log-after-init nil
-		init-loader-byte-compile t)
+                init-loader-byte-compile t)
   (init-loader-load (locate-user-emacs-file "inits")))
