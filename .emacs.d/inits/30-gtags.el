@@ -5,6 +5,11 @@
     (require 'helm-config)
     (require 'helm-gtags)
 
+    (custom-set-variables
+      '(helm-gtags-path-style 'relative)
+      '(helm-gtags-ignore-case t)
+      '(helm-gtags-auto-update t))
+
     (add-hook 'helm-gtags-mode-hook
       '(lambda ()
          (local-set-key (kbd "M-t") 'helm-gtags-find-tag)
