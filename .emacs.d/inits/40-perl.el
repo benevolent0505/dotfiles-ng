@@ -50,4 +50,5 @@
        (setq flycheck-checker 'perl-project-libs)
        (setq flycheck-perl-include-path `(,(git-root-directory)))))
 
-  (add-hook 'cperl-mode-hook 'flycheck-mode))
+  (add-hook 'cperl-mode-hook 'flycheck-mode)
+  (add-hook 'cperl-mode-hook 'helm-gtags-mode))
