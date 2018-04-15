@@ -47,14 +47,3 @@
        (setq flycheck-perl-include-path `(,(git-root-directory)))))
 
   (add-hook 'cperl-mode-hook 'flycheck-mode))
-
-(el-get-bundle! wallacewinfrey/perl-completion
-  :depends helm
-
-  (add-hook 'cperl-mode-hook '(lambda () (perl-completion-mode t)))
-  (add-hook 'cperl-mode-hook
-    '(lambda ()
-       (with-eval-after-load-feature 'auto-complete
-         (auto-complete-mode t)
-         (make-variable-buffer-local 'ac-sources)
-         (setq ac-sources 'ac-source-perl-completion)))))
