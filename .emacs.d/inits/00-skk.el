@@ -6,4 +6,6 @@
 (setq-default skk-share-private-jisyo t)   ; 複数 skk 辞書を共有
 
 (el-get-bundle ddskk
-  (global-set-key (kbd "C-j") 'skk-mode))
+  (global-set-key (kbd "C-j") 'skk-mode)
+
+  (add-hook 'org-mode-hook '(lambda () (local-set-key (kbd "C-j") 'skk-mode))))
