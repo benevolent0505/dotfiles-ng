@@ -8,6 +8,8 @@
 
   (add-to-list 'ac-dictionary-directories (locate-user-emacs-file "ac-dict"))
 
+  (custom-set-variables
+    '(ac-auto-start nil))
   (setq
     ac-auto-show-menu 0.02
     ac-menu-map t
