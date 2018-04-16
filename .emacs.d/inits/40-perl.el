@@ -54,9 +54,9 @@
     :modes (cperl-mode))
   (add-hook 'cperl-mode-hook
     '(lambda ()
-       (setq-local company-idle-delay nil)
-       (setq-local ac-auto-start 2)
-       (auto-complete-mode 1)
+       ;; (setq-local company-idle-delay nil)
+       ;; (setq-local ac-auto-start 2)
+       ;; (auto-complete-mode 1)
 
        (flycheck-mode t)
        (setq flycheck-checker 'perl-project-libs)
