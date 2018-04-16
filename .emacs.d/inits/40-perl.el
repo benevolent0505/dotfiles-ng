@@ -26,12 +26,24 @@
     cperl-indent-region-fix-constructs      nil)
 
   ;; https://m0t0k1ch1st0ry.com/blog/2014/07/07/flycheck/
+  ;; (flycheck-define-checker perl-project-libs
+  ;;   "A perl syntax checker."
+  ;;   :command (
+  ;;              "perl"
+  ;;              (option-list "-I" flycheck-perl-include-path)
+  ;;              "-MProject::Libs lib_dirs => [qw(t/lib modules/*/lib local/lib/perl5)]"
+  ;;              "-wc"
+  ;;              source-inplace)
+  ;;   :error-patterns ((error line-start
+  ;;                      (minimal-match (message))
+  ;;                      " at " (file-name) " line " line
+  ;;                      (or "." (and ", " (zero-or-more not-newline)))
+  ;;                      line-end))
+  ;;   :modes (cperl-mode))
   (flycheck-define-checker perl-project-libs
     "A perl syntax checker."
-    :command (
-               "perl"
-               (option-list "-I" flycheck-perl-include-path)
-               "-MProject::Libs lib_dirs => [qw(t/lib modules/*/lib local/lib/perl5)]"
+    :command ("carton exec -- perl"
+               "-MProject::Libs lib_dirs => [qw(local/lib/perl5)]"
                "-wc"
                source-inplace)
     :error-patterns ((error line-start
