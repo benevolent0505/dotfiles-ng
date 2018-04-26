@@ -8,6 +8,7 @@
 (setq-default line-spacing 0)             ;; 行間を0に
 (setq-default show-trailing-whitespace t) ;; 行末の空白を強制表示
 (setq indicate-buffer-boundaries 'right)
+(electric-pair-mode t)
 
 ;; scroll setting
 (setq scroll-conservatively 1
