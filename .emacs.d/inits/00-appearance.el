@@ -35,11 +35,13 @@
         (cl-callf color-saturate-name (face-foreground face) 30))))
   (add-hook 'emacs-startup-hook 'rainbow-delimiters-using-stronger-colors))
 
-(el-get-bundle! zk-phi/sky-color-clock
-  (sky-color-clock-initialize 35)
-  (setq sky-color-clock-format "%H:%M")
-  (setq sky-color-clock-enable-emoji-icon t)
-  (push '(:eval (sky-color-clock)) (default-value 'mode-line-format)))
+;; モードラインに時刻表示
+(custom-set-variables
+  '(display-time-interval 1)
+  '(display-time-string-forms
+     '((format "%s:%s:%s" 24-hours minutes seconds))))
+(setq display-time-day-and-date t)
+(display-time-mode t)
 
 (el-get-bundle bbatsov/zenburn-emacs
   (add-to-list 'custom-theme-load-path (locate-user-emacs-file "el-get/zenburn-emacs"))
