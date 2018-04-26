@@ -3,7 +3,6 @@
 (tool-bar-mode -1)                        ;; ツールバー非表示
 (menu-bar-mode -1)                        ;; メニューバー非表示
 (set-scroll-bar-mode nil)                 ;; スクロールバー非表示
-(global-linum-mode t)                     ;; 行番号を表示する
 (column-number-mode t)                    ;; カラム番号を表示
 (show-paren-mode t)                       ;; 対応する括弧を表示
 (setq-default line-spacing 0)             ;; 行間を0に
