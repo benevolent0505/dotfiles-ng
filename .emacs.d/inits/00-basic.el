@@ -8,7 +8,7 @@
 (fset 'yes-or-no-p 'y-or-n-p)
 
 (setq-default tab-width 2
-              indent-tabs-mode t)
+  indent-tabs-mode nil)
 
 ;; align
 (require 'align nil t)
