@@ -4,7 +4,7 @@
 
 (el-get-bundle! auto-complete-config in auto-complete
   (ac-config-default)
-  (ac-set-trigger-key "TAB")
+  ;; (ac-set-trigger-key "TAB")
 
   (add-to-list 'ac-dictionary-directories (locate-user-emacs-file "ac-dict"))
 
