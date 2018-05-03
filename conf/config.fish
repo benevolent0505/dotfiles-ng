@@ -22,6 +22,7 @@ set -x PATH $PYENV_ROOT/shims $PATH
 
 # plenv
 set -x PATH $HOME/.plenv/bin $PATH
+set -x PATH $HOME/.plenv/shims $PATH
 plenv init - | source
 alias reply "rlwrap reply"
 
