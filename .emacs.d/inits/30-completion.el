@@ -27,6 +27,3 @@
   :depends pos-tip
   (with-eval-after-load-feature 'company
     (company-quickhelp-mode +1)))
-
-(el-get-bundle! company-emoji
-  (add-to-list 'company-backends 'company-emoji))
