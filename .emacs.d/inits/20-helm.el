@@ -3,6 +3,7 @@
   (global-set-key (kbd "C-x C-f") 'helm-find-files)
   (define-key helm-find-files-map (kbd "TAB") 'helm-execute-persistent-action)
   (global-set-key (kbd "C-x b") 'helm-buffers-list)
+  (global-set-key (kbd "C-x C-b") 'helm-buffers-list)
   (global-set-key (kbd "C-x C-r") 'helm-recentf)
 
   (helm-mode 1)
