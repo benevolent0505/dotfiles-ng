@@ -42,11 +42,7 @@
 (setq display-time-day-and-date t)
 (display-time-mode t)
 
-(el-get-bundle bbatsov/zenburn-emacs
-  (add-to-list 'custom-theme-load-path (locate-user-emacs-file "el-get/zenburn-emacs"))
-  (defvar zenburn-override-colors-alist
-    '(("zenburn-bg+05" . "#282828")
-      ("zenburn-bg+1"  . "#2F2F2F")
-      ("zenburn-bg+2"  . "#3F3F3F")
-      ("zenburn-bg+3"  . "#4F4F4F")))
-  (load-theme 'zenburn t))
+(el-get-bundle dracula/emacs
+  :name dracula-theme
+  (add-to-list 'custom-theme-load-path (locate-user-emacs-file "el-get/dracula-theme"))
+  (load-theme 'dracula t))
