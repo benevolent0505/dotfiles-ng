@@ -6,6 +6,9 @@
   ;; aligns annotation to the right hand side
   (setq company-tooltip-align-annotations t))
 
+(el-get-bundle Simplify/flycheck-typescript-tslint
+  (with-eval-after-load-feature 'flycheck
+    (add-hook 'flycheck-mode-hook #'flycheck-typescript-tslint-setup)))
 
 (with-eval-after-load-feature (web-mode flycheck)
   (add-to-list 'auto-mode-alist '("\\.tsx\\'" . web-mode))
