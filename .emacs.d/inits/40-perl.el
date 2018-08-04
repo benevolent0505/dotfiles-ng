@@ -13,7 +13,7 @@
   (setq-default cperl-indent-level 4
     cperl-continued-statement-offset 4
     cperl-close-paren-offset -4
-    cperl-comment-column 40
+    cperl-comment-column 119
     cperl-highlight-variables-indiscriminately t
     cperl-indent-parens-as-block t
     cperl-indent-subs-specially nil
@@ -23,7 +23,8 @@
     cperl-break-one-line-blocks-when-indent nil
     cperl-fix-hanging-brace-when-indent     nil
     cperl-merge-trailing-else               nil
-    cperl-indent-region-fix-constructs      nil)
+    cperl-indent-region-fix-constructs      nil
+    cperl-max-help-size 119)
 
   ;; https://m0t0k1ch1st0ry.com/blog/2014/07/07/flycheck/
   ;; (flycheck-define-checker perl-project-libs
