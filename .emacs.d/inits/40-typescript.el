@@ -27,8 +27,9 @@
   (flycheck-mode +1)
   (setq flycheck-check-syntax-automatically '(save mode-enabled))
   (eldoc-mode +1)
-  (tide-hl-identifier-mode +1))
+  (tide-hl-identifier-mode +1)
+
+  (setq tide-tsserver-executable "node_modules/typescript/bin/tsserver"))
 
 (with-eval-after-load-feature (typescript-mode tide flycheck)
-  (add-hook 'before-save-hook 'tide-format-before-save)
   (add-hook 'typescript-mode-hook #'setup-tide-mode))
