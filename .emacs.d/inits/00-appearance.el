@@ -46,3 +46,5 @@
   :name dracula-theme
   (add-to-list 'custom-theme-load-path (locate-user-emacs-file "el-get/dracula-theme"))
   (load-theme 'dracula t))
+
+(set-frame-parameter nil 'alpha 90)
