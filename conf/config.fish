@@ -26,10 +26,6 @@ set -x PATH $HOME/.plenv/shims $PATH
 plenv init - | source
 alias reply "rlwrap reply"
 
-# ndenv
-set -x PATH $PATH $HOME/.ndenv/bin
-set -x PATH $PATH $HOME/.ndenv/shims
-
 # golang
 if test (uname) = "Linux"
     set -x PATH $PATH /usr/local/go/bin
