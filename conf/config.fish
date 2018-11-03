@@ -51,7 +51,6 @@ function fish_user_key_bindings
   bind \cr peco_history
   bind \cs peco_change_directory
 end
-set -g fish_user_paths "/usr/local/opt/texinfo/bin" $fish_user_paths
 
 function history-merge --on-event fish_preexec
   history --save
