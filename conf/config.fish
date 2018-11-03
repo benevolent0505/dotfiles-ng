@@ -15,6 +15,9 @@ set -x PATH $PATH $HOME/local/bin
 # rbenv
 status --is-interactive; and source (rbenv init -|psub)
 
+# nodenv
+status --is-interactive; and source (nodenv init -|psub)
+
 # pyenv
 set -x PYENV_ROOT $HOME/.pyenv
 set -x PATH $PYENV_ROOT/bin $PATH
