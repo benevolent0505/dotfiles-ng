@@ -13,9 +13,7 @@ alias grep "rg"
 set -x PATH $PATH $HOME/local/bin
 
 # rbenv
-set -x PATH $PATH $HOME/.rbenv/bin
-set -x PATH $PATH $HOME/.rbenv/shims
-rbenv init - | source
+status --is-interactive; and source (rbenv init -|psub)
 
 # pyenv
 set -x PYENV_ROOT $HOME/.pyenv
