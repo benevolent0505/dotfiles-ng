@@ -6,6 +6,8 @@ end
 
 alias f "open ."
 alias emacs "emacsclient -nw"
+alias cat "bat"
+alias grep "rg"
 
 # 便利スクリプト置場
 set -x PATH $PATH $HOME/local/bin
