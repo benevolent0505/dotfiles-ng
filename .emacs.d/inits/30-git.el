@@ -8,5 +8,5 @@
   (global-set-key (kbd "C-x p") 'git-gutter+-previous-hunk)
   (global-set-key (kbd "C-x n") 'git-gutter+-next-hunk))
 
-(el-get-bundle! git-link
+(el-get-bundle! sshaw/git-link
   (custom-set-variables '(git-link-open-in-browser t)))
