@@ -9,4 +9,7 @@
   (global-set-key (kbd "C-x n") 'git-gutter+-next-hunk))
 
 (el-get-bundle! sshaw/git-link
-  (custom-set-variables '(git-link-open-in-browser t)))
+  (global-set-key (kbd "C-c g l") 'git-link)
+  (custom-set-variables
+    '(git-link-open-in-browser t)
+    '(git-link-use-commit t)))
