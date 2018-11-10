@@ -12,7 +12,7 @@
         ((eq ws 'ns)
          (set-face-attribute 'default nil
                              :family "源ノ角ゴシック Code JP" ;;英数
-                             :height 110)
+                             :height 130)
          (set-fontset-font nil 'japanese-jisx0208 (font-spec :family "源ノ角ゴシック Code JP")))
         ((eq ws 'x)
          (set-face-attribute 'default nil
