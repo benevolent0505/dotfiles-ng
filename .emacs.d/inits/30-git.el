@@ -1,5 +1,6 @@
 (el-get-bundle magit
-  (global-set-key (kbd "C-x g") 'magit-status))
+  (global-set-key (kbd "C-x g") 'magit-status)
+  (global-set-key (kbd "C-x C-g") 'magit-blame))
 
 (el-get-bundle! git-gutter+
   (global-git-gutter+-mode)
