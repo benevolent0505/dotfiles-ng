@@ -11,7 +11,14 @@
     (goto-char (point-max))
     (eval-print-last-sexp)))
 
-;; 無いと勝手に挿入されるので
+;; package.el で入るパッケージとかち合うので、 package-initialize よりも先に呼ぶ必要がある
+(el-get-bundle dash)
+(el-get-bundle s)
+
+;; package.el
+(require 'package)
+(add-to-list 'package-archives
+  '("melpa-stable" . "https://stable.melpa.org/packages/") t)
 (package-initialize)
 
 ;; init-loader settings
