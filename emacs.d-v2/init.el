@@ -12,13 +12,6 @@
     (goto-char (point-max))
     (eval-print-last-sexp)))
 
-;; init-loader setting
-(el-get-bundle! emacs-jp/init-loader
-  (setq init-loader-show-log-after-init nil
-	init-loader-byte-compile t)
-  (unless (file-directory-p (locate-user-emacs-file "inits"))
-    (make-directory (locate-user-emacs-file "inits")))
-  (init-loader-load (locate-user-emacs-file "inits")))
 ;; package.el で入るパッケージとかち合うので、 package-initialize よりも先に呼ぶ必要がある
 (el-get-bundle dash)
 (el-get-bundle s)
