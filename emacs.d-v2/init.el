@@ -117,3 +117,8 @@
 
 (el-get-bundle! editorconfig
   (editorconfig-mode 1))
+
+
+(el-get-bundle hl-todo
+  ;; NOTE: 現状ハイライトしてくれるだけでも嬉しいので、キーワード間の移動は欲しくなったら考える
+  (global-hl-todo-mode))
