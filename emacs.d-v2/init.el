@@ -19,3 +19,6 @@
   (unless (file-directory-p (locate-user-emacs-file "inits"))
     (make-directory (locate-user-emacs-file "inits")))
   (init-loader-load (locate-user-emacs-file "inits")))
+;; package.el で入るパッケージとかち合うので、 package-initialize よりも先に呼ぶ必要がある
+(el-get-bundle dash)
+(el-get-bundle s)
