@@ -21,3 +21,17 @@
 (add-to-list 'package-archives
              '("melpa-stable" . "https://stable.melpa.org/packages/") t)
 (package-initialize)
+
+;; Appearance
+(setq-default inhibit-startup-screen t
+              initial-scratch-message ""
+              indent-tabs-mode nil
+              show-trailing-whitespace t
+              tab-width 2)
+(menu-bar-mode -1)
+(set-scroll-bar-mode nil)
+(show-paren-mode t)
+(tool-bar-mode -1)
+
+(set-frame-parameter nil 'alpha 90)
+(set-frame-parameter nil 'fullscreen 'maximized)
