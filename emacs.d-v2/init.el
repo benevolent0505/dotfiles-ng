@@ -102,3 +102,9 @@
                 skk-share-private-jisyo t)
 
   (global-set-key (kbd "C-x j") 'skk-mode))
+
+
+(el-get-bundle ace-window
+  (setq-default aw-keys '(?a ?s ?d ?f ?g ?h ?j ?k ?l))
+
+  (global-set-key (kbd "M-o") 'ace-window))
