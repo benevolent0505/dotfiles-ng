@@ -122,3 +122,39 @@
 (el-get-bundle hl-todo
   ;; NOTE: 現状ハイライトしてくれるだけでも嬉しいので、キーワード間の移動は欲しくなったら考える
   (global-hl-todo-mode))
+
+
+;; ivy/counsel
+(el-get-bundle counsel
+  :features ivy
+
+  (ivy-mode 1)
+
+  ;; ivy
+  (setq-default ivy-use-virtual-buffers t
+                enable-recursive-minibuffers t
+                ivy-height 20
+                ivy-extra-directories nil
+                ivy-count-format "(%d/%d) ")
+
+  ;; swiper
+  (setq-default swiper-include-line-number-in-search t)
+
+  (global-set-key (kbd "C-s") 'swiper)
+  (global-set-key (kbd "M-x") 'counsel-M-x)
+  (global-set-key (kbd "C-x C-f") 'counsel-find-file)
+  ;; 検索はこっちが見やすいが、ヘルプは helpful-key の方が見やすい
+  ;; TODO: 検索インターフェースを counsel-descbinds にして、 helpful のヘルプが出せないか考える
+  (global-set-key (kbd "C-h b") 'counsel-descbinds)
+  (global-set-key (kbd "<f1> l") 'counsel-find-library)
+  (global-set-key (kbd "<f2> i") 'counsel-info-lookup-symbol)
+  (global-set-key (kbd "<f2> u") 'counsel-unicode-char)
+
+  (global-set-key (kbd "C-c g") 'counsel-git)
+  (global-set-key (kbd "C-c j") 'counsel-git-grep)
+  (global-set-key (kbd "C-c k") 'counsel-rg))
+
+(el-get-bundle windymelt/counsel-ghq
+  ;; FIXME: Emacs 起動時にキーバインドが設定されないのを直す
+  (with-eval-after-load-feature 'counsel
+    (global-set-key (kbd "C-x C-g") 'counsel-ghq)))
