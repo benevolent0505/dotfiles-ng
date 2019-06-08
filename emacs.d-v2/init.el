@@ -72,3 +72,11 @@
 (add-to-list 'backup-directory-alist (cons "." (locate-user-emacs-file "backups")))
 (setq-default auto-save-file-name-transforms
   `(("*" ,(expand-file-name (locate-user-emacs-file "backups")) t)))
+
+
+(el-get-bundle tarao/with-eval-after-load-feature-el)
+
+
+(el-get-bundle exec-path-from-shell
+  (when (memq window-system '(mac ns x))
+    (exec-path-from-shell-initialize)))
