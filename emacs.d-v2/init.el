@@ -91,3 +91,14 @@
   (global-set-key (kbd "C-h F") #'helpful-function)
 
   (global-set-key (kbd "C-h C") #'helpful-command))
+
+
+(el-get-bundle ddskk
+  (setq-default skk-server-host "localhost"
+                skk-server-portnum 1178
+                skk-dcomp-activate t
+                skk-dcomp-multiple-rows 20
+                skk-comp-prefix t
+                skk-share-private-jisyo t)
+
+  (global-set-key (kbd "C-x j") 'skk-mode))
