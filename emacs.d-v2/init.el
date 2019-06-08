@@ -108,3 +108,8 @@
   (setq-default aw-keys '(?a ?s ?d ?f ?g ?h ?j ?k ?l))
 
   (global-set-key (kbd "M-o") 'ace-window))
+
+
+(el-get-bundle! keyfreq
+  (keyfreq-mode 1)
+  (keyfreq-autosave-mode 1))
