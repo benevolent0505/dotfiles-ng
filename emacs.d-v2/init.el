@@ -35,3 +35,16 @@
 
 (set-frame-parameter nil 'alpha 90)
 (set-frame-parameter nil 'fullscreen 'maximized)
+
+;; Language environment
+(set-language-environment "Japanese")
+(prefer-coding-system 'utf-8-unix)
+
+;; Font
+;; TODO: 設定方法を理解できていないので困まったら調べ直す
+;; See Also: http://extra-vision.blogspot.com/2016/07/emacs.html
+(create-fontset-from-ascii-font
+  "Source Han Code JP-12:weight=normal:slant=normal" nil "Source Han Code JP")
+(set-fontset-font
+  "fontset-Source Han Code JP" 'unicode "Source Han Code JP-12:weight=normal:slant=normal" nil 'append)
+(add-to-list 'default-frame-alist '(font . "fontset-Source Han Code JP"))
