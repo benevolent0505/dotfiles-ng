@@ -1,11 +1,9 @@
-;; isolate emacs env
+;; emacs -l でinit.elを指定して設定を読み込めるように
+;; https://web.archive.org/web/20180203065224/https://unknownplace.org/memo/2013/01/21/1/
 (when load-file-name
   (setq user-emacs-directory (file-name-directory load-file-name)))
 
-;; 使わないけど, package-install の設定はする
-(package-initialize)
-
-;; el-get setting
+;; el-get
 (add-to-list 'load-path (locate-user-emacs-file "el-get/el-get"))
 (unless (require 'el-get nil 'noerror)
   (with-current-buffer
