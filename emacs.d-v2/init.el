@@ -48,3 +48,10 @@
 (set-fontset-font
   "fontset-Source Han Code JP" 'unicode "Source Han Code JP-12:weight=normal:slant=normal" nil 'append)
 (add-to-list 'default-frame-alist '(font . "fontset-Source Han Code JP"))
+
+;; Color theme
+(el-get-bundle dracula/emacs
+  :name dracula-theme
+
+  (add-to-list 'custom-theme-load-path (locate-user-emacs-file "el-get/dracula-theme"))
+  (load-theme 'dracula t))
