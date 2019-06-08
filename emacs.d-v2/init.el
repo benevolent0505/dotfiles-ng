@@ -67,3 +67,8 @@
 (defalias 'yes-or-no-p 'y-or-n-p)
 ;; バッファ移動を Meta + 矢印でも出来るように
 (windmove-default-keybindings 'meta)
+
+;; バックアップファイルを一箇所に集める
+(add-to-list 'backup-directory-alist (cons "." (locate-user-emacs-file "backups")))
+(setq-default auto-save-file-name-transforms
+  `(("*" ,(expand-file-name (locate-user-emacs-file "backups")) t)))
