@@ -55,3 +55,8 @@
 
   (add-to-list 'custom-theme-load-path (locate-user-emacs-file "el-get/dracula-theme"))
   (load-theme 'dracula t))
+
+;; Brackets settings
+(electric-pair-mode t)
+(el-get-bundle rainbow-delimiters
+  (add-hook 'prog-mode-hook #'rainbow-delimiters-mode))
