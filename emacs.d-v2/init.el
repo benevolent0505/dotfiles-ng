@@ -229,6 +229,9 @@
   (add-hook 'web-mode-hook 'my-web-mode-hook))
 
 
+(el-get-bundle! nginx-mode)
+
+
 ;; JavaScript
 (el-get-bundle js2-mode
 
