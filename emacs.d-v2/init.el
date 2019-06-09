@@ -176,3 +176,16 @@
   :depends (company-mode pos-tip)
 
   (company-quickhelp-mode 1))
+
+
+;; Git
+;; NOTE: counsel の方に git grep 等の設定があるのでそちらもチェックする
+(el-get-bundle magit
+  (global-set-key (kbd "C-x g") 'magit-status))
+
+(el-get-bundle! git-gutter+
+  (global-git-gutter+-mode t))
+
+(el-get-bundle git-link
+  (setq-default git-link-open-in-browser t
+                git-link-use-commit t))
