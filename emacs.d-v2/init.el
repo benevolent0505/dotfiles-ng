@@ -197,3 +197,7 @@
   (setq-default open-junk-file-format "~/local/junk/%Y/%m/%Y-%m-%d-%H%M%S.org")
 
   (global-set-key (kbd "C-x C-j") 'open-junk-file))
+
+
+(el-get-bundle markdown-mode
+  (add-to-list 'auto-mode-alist '("\\.md\\'" . gfm-mode)))
