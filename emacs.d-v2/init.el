@@ -158,3 +158,21 @@
   ;; FIXME: Emacs 起動時にキーバインドが設定されないのを直す
   (with-eval-after-load-feature 'counsel
     (global-set-key (kbd "C-x C-g") 'counsel-ghq)))
+
+
+(el-get-bundle! company
+  (add-hook 'after-init-hook 'global-company-mode)
+
+  (setq-default company-dabbrev-downcase nil
+                company-idle-delay 0
+                company-minimum-prefix-length 2
+                company-selection-wrap-around t
+                completion-ignore-case t)
+
+  (global-set-key (kbd "C-M-i") 'company-complete)
+  (define-key company-active-map (kbd "C-s") 'company-filter-candidates))
+
+(el-get-bundle company-quickhelp
+  :depends (company-mode pos-tip)
+
+  (company-quickhelp-mode 1))
