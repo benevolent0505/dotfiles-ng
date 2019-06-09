@@ -111,6 +111,10 @@
   (global-set-key (kbd "M-o") 'ace-window))
 
 
+(el-get-bundle avy
+  (global-set-key (kbd "C-;") 'avy-goto-word-1))
+
+
 (el-get-bundle! keyfreq
   (keyfreq-mode 1)
   (keyfreq-autosave-mode 1))
@@ -183,7 +187,8 @@
 ;; Git
 ;; NOTE: counsel の方に git grep 等の設定があるのでそちらもチェックする
 (el-get-bundle magit
-  (global-set-key (kbd "C-x g") 'magit-status))
+  (global-set-key (kbd "C-x g") 'magit-status)
+  (global-set-key (kbd "C-x C-b") 'magit-blame))
 
 (el-get-bundle! git-gutter+
   (global-git-gutter+-mode t))
@@ -191,6 +196,14 @@
 (el-get-bundle git-link
   (setq-default git-link-open-in-browser t
                 git-link-use-commit t))
+
+
+(el-get-bundle flycheck
+  (setq-default flycnheck-disabled-checkers '(emacs-lisp-checkdoc javascript-jshint javascript-jscs json-jsonlint))
+
+  (add-hook 'after-init-hook #'global-flycheck-mode))
+
+
 ;; 挙動が変なのでそのまま open-junk-file 実行後は RET を押してファイルを作る
 ;; TODO: ivy との噛み合わせで意図しない挙動になっている気がするので調べる
 (el-get-bundle! open-junk-file
@@ -201,3 +214,76 @@
 
 (el-get-bundle markdown-mode
   (add-to-list 'auto-mode-alist '("\\.md\\'" . gfm-mode)))
+
+
+;; Web development
+(el-get-bundle! web-mode
+
+  (add-to-list 'auto-mode-alist '("\\.html?\\'" . web-mode))
+
+  (defun my-web-mode-hook ()
+    "Hooks for web-mode"
+    (setq-default web-mode-markup-indent-offset 2
+                  web-mode-code-indent-offset 2
+                  web-mode-script-padding 2))
+  (add-hook 'web-mode-hook 'my-web-mode-hook))
+
+
+;; JavaScript
+(el-get-bundle js2-mode
+
+  (setq-default js2-basic-offset 2
+                js-indent-level 2)
+
+  (add-to-list 'auto-mode-alist '("\\.js?\\'" . js2-mode))
+  (add-hook 'js-mode-hook 'js2-minor-mode))
+
+(el-get-bundle rjsx-mode
+
+  (add-to-list 'auto-mode-alist '("\\.jsx?\\'" . rjsx-mode)))
+
+(el-get-bundle tern
+
+  (defun my-tern-mode-hook ()
+    "Hooks for js-mode"
+    (tern-mode t))
+  (add-hook 'js-mode-hook 'my-tern-mode-hook))
+
+(el-get-bundle company-tern
+  :depends (company)
+
+  (with-eval-after-load-feature 'company
+    (add-to-list 'company-backends 'company-tern)))
+
+(el-get-bundle add-node-modules-path
+
+  (with-eval-after-load-feature 'js2-mode
+    (add-hook 'js2-mode-hook 'add-node-modules-path)))
+
+
+;; TypeScript
+
+
+;; Go
+
+
+;; Perl
+
+
+;; Python
+
+
+(custom-set-variables
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+  '(package-selected-packages
+     (quote
+       (git-link hl-todo helpful counsel company add-node-modules-path))))
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ )
