@@ -26,7 +26,7 @@
 (setq-default inhibit-startup-screen t
               initial-scratch-message ""
               indent-tabs-mode nil
-              show-trailing-whitespace t
+              show-trailing-whitespace t  ;; TODO: prog-mode 以外は whitespace をハイライトしないようにしたい
               tab-width 2)
 (menu-bar-mode -1)
 (set-scroll-bar-mode nil)
@@ -93,6 +93,7 @@
   (global-set-key (kbd "C-h C") #'helpful-command))
 
 
+;; TODO: AquaSKKと辞書を共有する方法を調べる
 (el-get-bundle ddskk
   (setq-default skk-server-host "localhost"
                 skk-server-portnum 1178
