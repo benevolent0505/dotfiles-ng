@@ -285,6 +285,9 @@
 
 
 ;; Go
+(el-get-bundle go-mode
+  (add-to-list 'auto-mode-alist '("\\.go\\'" . go-mode)))
+
 
 
 ;; Perl
