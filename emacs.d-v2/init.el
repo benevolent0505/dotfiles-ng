@@ -78,8 +78,10 @@
 
 
 (el-get-bundle exec-path-from-shell
-  (when (memq window-system '(mac ns x))
-    (exec-path-from-shell-initialize)))
+
+  ;; 追加したい環境変数が増えたらここに足す
+  (let ((envs '("PATH" "GOPATH")))
+    (exec-path-from-shell-copy-envs envs)))
 
 
 (el-get-bundle helpful
