@@ -14,6 +14,7 @@
 
 ;; package.el で入るパッケージとかち合うので、 package-initialize よりも先に呼ぶ必要がある
 (el-get-bundle dash)
+(el-get-bundle f)
 (el-get-bundle s)
 
 ;; package.el
