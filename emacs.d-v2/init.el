@@ -207,6 +207,10 @@
   (add-hook 'after-init-hook #'global-flycheck-mode))
 
 
+(el-get-bundle! yasnippet
+  (yas-global-mode 1))
+
+
 ;; 挙動が変なのでそのまま open-junk-file 実行後は RET を押してファイルを作る
 ;; TODO: ivy との噛み合わせで意図しない挙動になっている気がするので調べる
 (el-get-bundle! open-junk-file
@@ -217,6 +221,16 @@
 
 (el-get-bundle markdown-mode
   (add-to-list 'auto-mode-alist '("\\.md\\'" . gfm-mode)))
+
+
+(el-get-bundle! lsp-mode
+
+  (add-hook 'prog-mode-hook #'lsp))
+
+(el-get-bundle! company-lsp
+  :depends (lsp-mode company yasnippet)
+
+  (push 'company-lsp company-backends))
 
 
 ;; Web development
