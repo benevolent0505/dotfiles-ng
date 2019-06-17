@@ -207,8 +207,16 @@
   (add-hook 'after-init-hook #'global-flycheck-mode))
 
 
+;; yasnippet
 (el-get-bundle! yasnippet
+  (add-to-list 'yas-snippet-dirs (locate-user-emacs-file "snippet"))
+
   (yas-global-mode 1))
+
+(el-get-bundle yasnippet-snippets
+  :depends (yasnippet)
+
+  (add-to-list 'yas-snippet-dirs (locate-user-emacs-file "el-get/yasnippet-snippets/snippets")))
 
 
 ;; 挙動が変なのでそのまま open-junk-file 実行後は RET を押してファイルを作る
