@@ -111,7 +111,7 @@
 (el-get-bundle ace-window
   (setq-default aw-keys '(?a ?s ?d ?f ?g ?h ?j ?k ?l))
 
-  (global-set-key (kbd "M-o") 'ace-window))
+  (global-set-key (kbd "C-x o") 'ace-window))
 
 
 (el-get-bundle avy
