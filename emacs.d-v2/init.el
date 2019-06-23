@@ -223,15 +223,12 @@
 (el-get-bundle markdown-mode
   (add-to-list 'auto-mode-alist '("\\.md\\'" . gfm-mode)))
 
+;; LSP Clinet
+(el-get-bundle eglot
 
-(el-get-bundle! lsp-mode
-
-  (add-hook 'prog-mode-hook #'lsp))
-
-(el-get-bundle! company-lsp
-  :depends (lsp-mode company yasnippet)
-
-  (push 'company-lsp company-backends))
+  (add-hook 'go-mode-hook 'eglot-ensure)
+  (with-eval-after-load-feature 'eglot
+    (add-to-list 'eglot-server-programs '(go-mode . ("gopls")))))
 
 
 ;; Web development
