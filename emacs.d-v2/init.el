@@ -173,8 +173,6 @@
                 company-selection-wrap-around t
                 completion-ignore-case t)
 
-  (global-set-key (kbd "C-M-i") 'company-complete)
-  (define-key company-active-map (kbd "C-s") 'company-filter-candidates))
 
 (el-get-bundle company-quickhelp
   :depends (company-mode pos-tip)
