@@ -100,7 +100,7 @@
                 skk-comp-prefix t
                 skk-share-private-jisyo t)
 
-  (global-set-key (kbd "C-x j") 'skk-mode))
+  (global-set-key (kbd "C-j") 'skk-mode))
 
 
 (el-get-bundle ace-window
