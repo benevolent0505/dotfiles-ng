@@ -233,6 +233,7 @@
 (el-get-bundle! web-mode
 
   (add-to-list 'auto-mode-alist '("\\.html?\\'" . web-mode))
+  (add-to-list 'auto-mode-alist '("\\.tmpl?\\'" . web-mode))
 
   (defun my-web-mode-hook ()
     "Hooks for web-mode"
