@@ -214,10 +214,8 @@
 
 ;; 挙動が変なのでそのまま open-junk-file 実行後は RET を押してファイルを作る
 ;; TODO: ivy との噛み合わせで意図しない挙動になっている気がするので調べる
-(el-get-bundle! open-junk-file
-  (setq-default open-junk-file-format "~/local/junk/%Y/%m/%Y-%m-%d-%H%M%S.org")
-
-  (global-set-key (kbd "C-x C-j") 'open-junk-file))
+(el-get-bundle! emacswiki:open-junk-file
+  (setq-default open-junk-file-format "~/local/junk/%Y/%m/%Y-%m-%d-%H%M%S.org"))
 
 
 (el-get-bundle markdown-mode
