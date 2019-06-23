@@ -158,7 +158,6 @@
   (global-set-key (kbd "C-c k") 'counsel-rg))
 
 (el-get-bundle windymelt/counsel-ghq
-  :depends (counsel)
   ;; FIXME: Emacs 起動時にキーバインドが設定されないのを直す
   (with-eval-after-load-feature 'counsel
     (global-set-key (kbd "C-x C-g") 'counsel-ghq)))
