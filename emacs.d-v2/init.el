@@ -173,6 +173,7 @@
                 company-selection-wrap-around t
                 completion-ignore-case t)
 
+  (global-set-key (kbd "C-M-i") 'company-complete))
 
 (el-get-bundle company-quickhelp
   :depends (company-mode pos-tip)
