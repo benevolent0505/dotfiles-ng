@@ -284,6 +284,8 @@
 
 ;; Go
 (el-get-bundle go-mode
+  (setq-default gofmt-command "goimports")
+  (add-hook 'before-save-hook #'gofmt-before-save)
   (add-to-list 'auto-mode-alist '("\\.go\\'" . go-mode)))
 
 
