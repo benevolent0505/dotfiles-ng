@@ -76,7 +76,7 @@
 (el-get-bundle exec-path-from-shell
 
   ;; 追加したい環境変数が増えたらここに足す
-  (let ((envs '("PATH" "GOPATH")))
+  (let ((envs '("PATH" "GOPATH" "GO111MODULE")))
     (exec-path-from-shell-copy-envs envs)))
 
 
