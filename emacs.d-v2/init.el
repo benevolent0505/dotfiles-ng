@@ -46,11 +46,7 @@
 ;; See Also: http://extra-vision.blogspot.com/2016/07/emacs.html
 (set-default-font "Source Han Code JP N-12")
 ;; Color theme
-(el-get-bundle dracula/emacs
-  :name dracula-theme
-
-  (add-to-list 'custom-theme-load-path (locate-user-emacs-file "el-get/dracula-theme"))
-  (load-theme 'dracula t))
+(load-theme 'manoj-dark t)
 
 ;; Brackets settings
 (electric-pair-mode t)
