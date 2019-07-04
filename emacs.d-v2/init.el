@@ -221,8 +221,13 @@
 (el-get-bundle eglot
 
   (add-hook 'go-mode-hook 'eglot-ensure)
-  (with-eval-after-load-feature 'eglot
-    (add-to-list 'eglot-server-programs '(go-mode . ("gopls")))))
+  (add-hook 'typescript-mode-hook 'eglot-ensure)
+
+  (with-eval-after-load-feature (eglot add-node-modules-path)
+    (add-to-list 'eglot-server-programs '(go-mode . ("gopls")))
+
+    (add-hook 'typescript-mode-hook #'add-node-modules-path)
+    (add-to-list 'eglot-server-programs '(typescript-mode . ("typescript-language-server" "--stdio")))))
 
 
 ;; Web development
@@ -275,6 +280,8 @@
 
 
 ;; TypeScript
+(el-get-bundle typescript-mode
+  (add-to-list 'auto-mode-alist '("\\.ts\\'" . typescript-mode)))
 
 
 ;; Go
