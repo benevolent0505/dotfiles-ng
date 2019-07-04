@@ -5,3 +5,4 @@ elpa/
 transient/
 recentf
 *.data
+.lsp-session-v1
