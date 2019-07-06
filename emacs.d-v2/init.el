@@ -11,6 +11,7 @@
        "https://raw.githubusercontent.com/dimitri/el-get/master/el-get-install.el")
     (goto-char (point-max))
     (eval-print-last-sexp)))
+(add-to-list 'el-get-recipe-path (locate-user-emacs-file "recipes"))
 
 ;; package.el で入るパッケージとかち合うので、 package-initialize よりも先に呼ぶ必要がある
 (el-get-bundle dash)
@@ -153,10 +154,9 @@
   (global-set-key (kbd "C-c j") 'counsel-git-grep)
   (global-set-key (kbd "C-c k") 'counsel-rg))
 
-(el-get-bundle windymelt/counsel-ghq
-  ;; FIXME: Emacs 起動時にキーバインドが設定されないのを直す
-  (with-eval-after-load-feature 'counsel
-    (global-set-key (kbd "C-x C-g") 'counsel-ghq)))
+(el-get-bundle counsel-ghq
+  :depends counsel
+  (global-set-key (kbd "C-x C-g") 'counsel-ghq))
 
 
 (el-get-bundle! company
