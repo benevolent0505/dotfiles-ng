@@ -275,8 +275,9 @@
 
 (el-get-bundle add-node-modules-path
 
-  (with-eval-after-load-feature 'js2-mode
-    (add-hook 'js2-mode-hook 'add-node-modules-path)))
+  (with-eval-after-load-feature (js2-mode typescript-mode)
+    (add-hook 'js2-mode-hook 'add-node-modules-path)
+    (add-hook 'typescript-mode-hook #'add-node-modules-path)))
 
 
 ;; TypeScript
