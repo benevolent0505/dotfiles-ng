@@ -217,17 +217,7 @@
 (el-get-bundle markdown-mode
   (add-to-list 'auto-mode-alist '("\\.md\\'" . gfm-mode)))
 
-;; LSP Clinet
-(el-get-bundle eglot
 
-  (add-hook 'go-mode-hook 'eglot-ensure)
-  (add-hook 'typescript-mode-hook 'eglot-ensure)
-
-  (with-eval-after-load-feature (eglot add-node-modules-path)
-    (add-to-list 'eglot-server-programs '(go-mode . ("gopls")))
-
-    (add-hook 'typescript-mode-hook #'add-node-modules-path)
-    (add-to-list 'eglot-server-programs '(typescript-mode . ("typescript-language-server" "--stdio")))))
 
 
 ;; Web development
@@ -299,3 +289,17 @@
 ;; Python
 (el-get-bundle! python-mode
   (add-to-list 'auto-mode-alist '("\\.py\\'" . python-mode)))
+
+
+;; LSP Clinet
+(el-get-bundle eglot
+
+  (add-hook 'go-mode-hook 'eglot-ensure)
+  (add-hook 'typescript-mode-hook 'eglot-ensure)
+  (add-hook 'python-mode-hook 'eglot-ensure)
+
+  (with-eval-after-load-feature (eglot add-node-modules-path)
+    (add-to-list 'eglot-server-programs '(go-mode . ("gopls")))
+
+    (add-hook 'typescript-mode-hook #'add-node-modules-path)
+    (add-to-list 'eglot-server-programs '(typescript-mode . ("typescript-language-server" "--stdio")))))
