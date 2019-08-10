@@ -294,12 +294,16 @@
 ;; LSP Clinet
 (el-get-bundle eglot
 
-  (add-hook 'go-mode-hook 'eglot-ensure)
-  (add-hook 'typescript-mode-hook 'eglot-ensure)
-  (add-hook 'python-mode-hook 'eglot-ensure)
-
-  (with-eval-after-load-feature (eglot add-node-modules-path)
+  (with-eval-after-load-feature 'eglot
+    ;; Go
     (add-to-list 'eglot-server-programs '(go-mode . ("gopls")))
+    (add-hook 'go-mode-hook 'eglot-ensure)
 
-    (add-hook 'typescript-mode-hook #'add-node-modules-path)
-    (add-to-list 'eglot-server-programs '(typescript-mode . ("typescript-language-server" "--stdio")))))
+    ;; TypeScript
+    (with-eval-after-load-feature (add-node-modules-path)
+      (add-hook 'typescript-mode-hook #'add-node-modules-path)
+      (add-to-list 'eglot-server-programs '(typescript-mode . ("typescript-language-server" "--stdio")))
+      (add-hook 'typescript-mode-hook 'eglot-ensure))
+
+    ;; Python
+    (add-hook 'python-mode-hook 'eglot-ensure)))
