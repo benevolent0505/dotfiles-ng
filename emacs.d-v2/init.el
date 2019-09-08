@@ -218,6 +218,16 @@
   (add-to-list 'auto-mode-alist '("\\.md\\'" . gfm-mode)))
 
 
+;; Docker
+(el-get-bundle dockerfile-mode
+  (add-to-list 'auto-mode-alist '("Dockerfile\\'" . dockerfile-mode)))
+
+
+(el-get-bundle! yaml-mode
+  (setq-default yaml-indent-offset 2)
+
+  (add-to-list 'auto-mode-alist '("\\.yml\\'" . yaml-mode))
+  (add-to-list 'auto-mode-alist '("\\.yaml\\'" . yaml-mode)))
 
 
 ;; Web development
