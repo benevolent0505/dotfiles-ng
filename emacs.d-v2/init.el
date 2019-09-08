@@ -154,6 +154,9 @@
   (global-set-key (kbd "C-c j") 'counsel-git-grep)
   (global-set-key (kbd "C-c k") 'counsel-rg))
 
+;; インストールしていれば counsel-M-x が勝手に使ってくれる
+(el-get-bundle amx)
+
 (el-get-bundle counsel-ghq
   :depends counsel
   (global-set-key (kbd "C-x C-g") 'counsel-ghq))
