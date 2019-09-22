@@ -233,6 +233,9 @@
   (add-to-list 'auto-mode-alist '("\\.yaml\\'" . yaml-mode)))
 
 
+(el-get-bundle graphql-mode)
+
+
 ;; Web development
 (el-get-bundle! web-mode
 
