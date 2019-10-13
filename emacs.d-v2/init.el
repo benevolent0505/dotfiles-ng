@@ -211,6 +211,18 @@
   (add-to-list 'yas-snippet-dirs (locate-user-emacs-file "el-get/yasnippet-snippets/snippets")))
 
 
+;; smart-jump  NOTE: 何故かパッケージ名指定だけのみで入らないのでレポジトリ名を指定する
+(el-get-bundle jacktasia/dumb-jump
+  :depends popup
+
+  (setq-default dumb-jump-selector 'ivy)
+  (dumb-jump-mode 1))
+(el-get-bundle jojojames/smart-jump
+  :depends popup
+
+  (smart-jump-setup-default-registers))
+
+
 ;; ivyだと拡張子を入力しようとすると絞り込みになってしまうので,
 ;; open-junk-file 実行後は RET を押してファイルを作る
 (el-get-bundle! open-junk-file
