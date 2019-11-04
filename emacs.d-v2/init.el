@@ -196,7 +196,7 @@
 (el-get-bundle flycheck
   (setq-default flycnheck-disabled-checkers '(emacs-lisp-checkdoc javascript-jshint javascript-jscs json-jsonlint))
 
-  (add-hook 'after-init-hook #'global-flycheck-mode))
+  (add-hook 'prog-mode-hook #'flycheck-mode))
 
 
 ;; yasnippet
