@@ -320,18 +320,17 @@
 
 
 ;; LSP Clinet
-(el-get-bundle eglot
+(el-get-bundle! lsp-mode
+  (add-hook 'prog-mode-hook #'lsp))
 
-  (with-eval-after-load-feature 'eglot
-    ;; Go
-    (add-to-list 'eglot-server-programs '(go-mode . ("gopls")))
-    (add-hook 'go-mode-hook 'eglot-ensure)
+(el-get-bundle! lsp-ui
+  :depends (lsp-mode)
+  (add-hook 'lsp-mode-hook #'lsp-ui-mode))
 
-    ;; TypeScript
-    (with-eval-after-load-feature (add-node-modules-path)
-      (add-hook 'typescript-mode-hook #'add-node-modules-path)
-      (add-to-list 'eglot-server-programs '(typescript-mode . ("typescript-language-server" "--stdio")))
-      (add-hook 'typescript-mode-hook 'eglot-ensure))
+(el-get-bundle! company-lsp
+  :depends (company lsp-mode)
 
-    ;; Python
-    (add-hook 'python-mode-hook 'eglot-ensure)))
+  (setq-default company-lsp-enable-snippet t
+                company-lsp-enable-recompletion t)
+
+  (push 'company-lsp company-backends))
