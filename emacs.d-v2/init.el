@@ -321,7 +321,13 @@
 
 ;; LSP Clinet
 (el-get-bundle! lsp-mode
-  (add-hook 'prog-mode-hook #'lsp))
+  (defun my-lsp-mode-hook ()
+    "Hooks for lsp-mode"
+    (when (eq major-mode 'typescript-mode)
+      (add-node-modules-path)
+      (add-hook 'typescript-mode-hook #'lsp)))
+
+  (add-hook 'prog-mode-hook #'my-lsp-mode-hook))
 
 (el-get-bundle! lsp-ui
   :depends (lsp-mode)
