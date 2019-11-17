@@ -185,6 +185,9 @@
   (global-set-key (kbd "C-x g") 'magit-status)
   (global-set-key (kbd "C-x C-b") 'magit-blame))
 
+(el-get-bundle! magit/forge
+  :depends (magit))
+
 (el-get-bundle! git-gutter+
   (global-git-gutter+-mode t))
 
