@@ -252,7 +252,6 @@
   (add-to-list 'auto-mode-alist '("\\.yaml\\'" . yaml-mode)))
 
 
-(el-get-bundle graphql-mode)
 (el-get-bundle davazp/graphql-mode)
 
 
