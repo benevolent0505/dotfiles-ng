@@ -221,12 +221,12 @@
 
 ;; Jump
 (el-get-bundle dumb-jump
-  :depends popup
+  :depends (popup)
 
   (setq-default dumb-jump-selector 'ivy)
   (dumb-jump-mode 1))
-(el-get-bundle smart-jump
-  :depends popup
+(el-get-bundle jojojames/smart-jump
+  :depends (popup)
 
   (smart-jump-setup-default-registers))
 
