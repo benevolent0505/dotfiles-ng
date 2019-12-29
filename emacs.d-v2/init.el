@@ -262,7 +262,7 @@
     (setq-default web-mode-markup-indent-offset 2
                   web-mode-code-indent-offset 2
                   web-mode-script-padding 2))
-  (add-hook 'web-mode-hook 'my-web-mode-hook))
+  (add-hook 'web-mode-hook #'my-web-mode-hook))
 
 
 (el-get-bundle! nginx-mode)
@@ -313,13 +313,17 @@
   (add-to-list 'auto-mode-alist '("\\.go\\'" . go-mode)))
 
 
+;; SML
+(el-get-bundle! sml-mode
+  (setq-default sml-indent-level 2)
+  (add-to-list 'auto-mode-alist '("\\.\\(sml\\|sig\\)\\'" . sml-mode)))
 
-;; Perl
 
+;; OCaml
+(el-get-bundle tuareg-mode
+  (setq-default tuareg-match-patterns-aligned t))
 
-;; Python
-(el-get-bundle! python-mode
-  (add-to-list 'auto-mode-alist '("\\.py\\'" . python-mode)))
+(el-get-bundle ocp-indent)
 
 
 ;; LSP Clinet
