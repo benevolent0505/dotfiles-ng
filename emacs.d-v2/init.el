@@ -128,7 +128,7 @@
 
 ;; ivy/counsel
 (el-get-bundle counsel
-  :features ivy
+  :features (ivy ivy-hydra)
 
   (ivy-mode 1)
 
