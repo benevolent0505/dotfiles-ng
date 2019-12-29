@@ -13,6 +13,8 @@
     (eval-print-last-sexp)))
 (add-to-list 'el-get-recipe-path (locate-user-emacs-file "recipes"))
 
+(el-get-bundle tarao/el-get-lock)
+
 ;; package.el で入るパッケージとかち合うので、 package-initialize よりも先に呼ぶ必要がある
 (el-get-bundle dash)
 (el-get-bundle f)
