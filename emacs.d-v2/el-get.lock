@@ -1,0 +1,9 @@
+(setq el-get-lock-package-versions
+      '((company-lsp :checksum "f921ffa0cdc542c21dc3dd85f2c93df4288e83bd")
+        (lsp-ui :checksum "d4a45b95f2ce1b0f0ba2ff7ed1d7b90d7c8483d2")
+        (lsp-mode :checksum "7ed4422fe4f546ac9e42c19524b6cecf04b7095c")
+        (forge :checksum "2155328d7e13647caf1779ed77a0104659c662c6")
+        (magit :checksum "dff0bca6f783d43ca3b116d5cbeda0fbed39246d")))
+(setq el-get-lock-locked-packages
+      '(company-lsp lsp-ui lsp-mode forge magit))
+(setq el-get-lock-unlocked-packages 'nil)

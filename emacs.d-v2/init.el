@@ -193,6 +193,9 @@
 (el-get-bundle forge
   :depends (magit))
 
+;; magit 関係はバージョン固定にする
+(el-get-lock 'magit 'forge)
+
 (el-get-bundle! git-gutter+
   (global-git-gutter+-mode t))
 
@@ -357,3 +360,6 @@
                 company-lsp-enable-recompletion t)
 
   (push 'company-lsp company-backends))
+
+;; LSP関係はバージョン固定する
+(el-get-lock 'lsp-mode 'lsp-ui 'company-lsp)
