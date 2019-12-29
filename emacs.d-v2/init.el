@@ -272,6 +272,12 @@
 (el-get-bundle! nginx-mode)
 
 
+;; SQL
+(defun my-sql-mode-hook ()
+  (setq-default tab-width 4))
+(add-hook 'sql-mode-hook #'my-sql-mode-hook)
+
+
 ;; JavaScript
 (el-get-bundle js2-mode
 
