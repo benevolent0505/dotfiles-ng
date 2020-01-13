@@ -191,7 +191,9 @@
   (global-set-key (kbd "C-x C-b") 'magit-blame))
 
 (el-get-bundle forge
-  :depends (magit))
+  :depends (magit)
+
+  (setq ghub-use-workaround-for-emacs-bug 'force))
 
 ;; magit 関係はバージョン固定にする
 (el-get-lock 'magit 'forge)
