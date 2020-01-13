@@ -365,3 +365,7 @@
 
 ;; LSP関係はバージョン固定する
 (el-get-lock 'lsp-mode 'lsp-ui 'company-lsp)
+
+;; 環境固有の設定はここに入れる
+(when (file-exists-p (expand-file-name "~/.private.el"))
+  (load (expand-file-name "~/.private.el")))
