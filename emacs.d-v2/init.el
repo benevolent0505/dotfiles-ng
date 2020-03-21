@@ -328,12 +328,6 @@
   (add-to-list 'auto-mode-alist '("\\.go\\'" . go-mode)))
 
 
-;; SML
-(el-get-bundle! sml-mode
-  (setq-default sml-indent-level 2)
-  (add-to-list 'auto-mode-alist '("\\.\\(sml\\|sig\\)\\'" . sml-mode)))
-
-
 ;; OCaml
 (el-get-bundle tuareg-mode
   (setq-default tuareg-match-patterns-aligned t))
