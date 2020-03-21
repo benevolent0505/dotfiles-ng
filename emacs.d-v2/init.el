@@ -132,6 +132,9 @@
 
 
 ;; ivy/counsel
+;; バージョン固定する
+(el-get-lock 'swiper)
+
 (el-get-bundle counsel
   :features (ivy ivy-hydra)
 
