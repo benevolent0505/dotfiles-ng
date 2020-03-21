@@ -191,13 +191,17 @@
 
 ;; Git
 ;; NOTE: counsel の方に git grep 等の設定があるのでそちらもチェックする
+
+;; magit 関係はバージョン固定にする
+(el-get-lock 'magit)
+
 (el-get-bundle magit
   (global-set-key (kbd "C-x g") 'magit-status)
   (global-set-key (kbd "C-x C-b") 'magit-blame))
 
-
-;; magit 関係はバージョン固定にする
-(el-get-lock 'magit)
+(el-get-bundle transient)
+(el-get-bundle magit-popup)
+(el-get-bundle ghub)
 
 (el-get-bundle! git-gutter+
   (global-git-gutter+-mode t))
