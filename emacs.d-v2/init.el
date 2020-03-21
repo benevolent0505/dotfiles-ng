@@ -49,10 +49,7 @@
 ;; See Also: http://extra-vision.blogspot.com/2016/07/emacs.html
 (set-default-font "Source Han Code JP N-12")
 ;; Color theme
-(el-get-bundle rails-to-cosmos/danneskjold-theme
-  (add-to-list 'custom-theme-load-path (locate-user-emacs-file "el-get/danneskjold-theme"))
-
-  (load-theme 'danneskjold t))
+(load-theme 'manoj-dark t)
 
 ;; Brackets settings
 (electric-pair-mode t)
