@@ -7,3 +7,5 @@ recentf
 *.data
 .lsp-session-v1
 amx-items
+bookmarks
+eshell/
