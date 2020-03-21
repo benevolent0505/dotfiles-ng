@@ -92,6 +92,8 @@
 
   (global-set-key (kbd "C-h C") #'helpful-command))
 
+;; SKK
+(el-get-lock 'ddskk)
 
 ;; TODO: AquaSKKと辞書を共有する方法を調べる
 (el-get-bundle ddskk
