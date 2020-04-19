@@ -306,19 +306,6 @@
 
   (add-to-list 'auto-mode-alist '("\\.jsx?\\'" . rjsx-mode)))
 
-(el-get-bundle tern
-
-  (defun my-tern-mode-hook ()
-    "Hooks for js-mode"
-    (tern-mode t))
-  (add-hook 'js-mode-hook 'my-tern-mode-hook))
-
-(el-get-bundle company-tern
-  :depends (company)
-
-  (with-eval-after-load-feature 'company
-    (add-to-list 'company-backends 'company-tern)))
-
 (el-get-bundle add-node-modules-path
 
   (with-eval-after-load-feature (js2-mode typescript-mode)
