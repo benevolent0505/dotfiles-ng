@@ -7,6 +7,9 @@ set -x PATH $PATH $HOME/local/bin
 # fish
 set -g fish_user_paths "/usr/local/sbin" $fish_user_paths
 
+set -g GHQ_SELECTOR peco
+set -g GHQ_SELECTOR_OPTS "--layout=top-down --prompt='ghq>'"
+
 # Perl
 set -x PATH $HOME/.plenv/bin $PATH
 set -x PATH $HOME/.plenv/shims $PATH
