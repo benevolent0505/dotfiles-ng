@@ -362,6 +362,10 @@
 (el-get-bundle! lsp-mode
   (defun my-lsp-mode-hook ()
     "Hooks for lsp-mode"
+
+    (add-hook 'before-save-hook #'lsp-format-buffer t t)
+    (add-hook 'before-save-hook #'lsp-organize-imports t t)
+
     (when (eq major-mode 'typescript-mode)
       (add-node-modules-path)
       (add-hook 'typescript-mode-hook #'lsp)))
