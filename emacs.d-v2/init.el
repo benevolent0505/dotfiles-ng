@@ -366,9 +366,16 @@
     (add-hook 'before-save-hook #'lsp-format-buffer t t)
     (add-hook 'before-save-hook #'lsp-organize-imports t t)
 
+    ;; for TypeScript
     (when (eq major-mode 'typescript-mode)
       (add-node-modules-path)
-      (add-hook 'typescript-mode-hook #'lsp)))
+      (add-hook 'typescript-mode-hook #'lsp))
+
+    ;; for Golang
+    (lsp-register-custom-settings
+      '(("gopls.completeUnimported" t t)
+         ("gopls.staticcheck" t t)))
+    (add-hook 'go-mode-hook #'lsp-deferred))
 
   (add-hook 'prog-mode-hook #'my-lsp-mode-hook))
 
