@@ -1,8 +1,8 @@
 (setq el-get-lock-package-versions
       '((ddskk :checksum "5b4cd5c73e7a273d1814d83bf7534704778f2a2d")
-        (company-lsp :checksum "f921ffa0cdc542c21dc3dd85f2c93df4288e83bd")
+        (company-lsp :checksum "4eb6949f19892be7bf682381cde005791a48583a")
         (lsp-ui :checksum "a8c50a93952afae3cd8948fecf4c1a3dc7f3e094")
-        (lsp-mode :checksum "5c8addac9d57dff268d2f6e825522fd5353e5e3e")
+        (lsp-mode :checksum "bdbd2d0ccfe02f6721ea942e82e5178f4b216228")
         (swiper :checksum "cd634c6f51458f81898ecf2821ac3169cb65a1eb")
         (magit :checksum "791901b2f1d26fa0a383147fe77948a9abc753da")))
 (setq el-get-lock-locked-packages
