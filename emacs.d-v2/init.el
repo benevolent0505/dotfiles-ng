@@ -383,16 +383,8 @@
   :depends (lsp-mode)
   (add-hook 'lsp-mode-hook #'lsp-ui-mode))
 
-(el-get-bundle! company-lsp
-  :depends (company lsp-mode)
-
-  (setq-default company-lsp-enable-snippet t
-                company-lsp-enable-recompletion t)
-
-  (push 'company-lsp company-backends))
-
 ;; LSP関係はバージョン固定する
-(el-get-lock 'lsp-mode 'lsp-ui 'company-lsp)
+(el-get-lock 'lsp-mode 'lsp-ui)
 
 ;; 環境固有の設定はここに入れる
 (when (file-exists-p (expand-file-name "~/.private.el"))
