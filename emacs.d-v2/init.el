@@ -49,7 +49,8 @@
 ;; See Also: http://extra-vision.blogspot.com/2016/07/emacs.html
 (set-default-font "Source Han Code JP N-15")
 ;; Color theme
-(load-theme 'manoj-dark t)
+(el-get-bundle srcery-theme
+  (load-theme 'srcery t))
 
 ;; Brackets settings
 (electric-pair-mode t)
