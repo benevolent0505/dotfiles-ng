@@ -14,7 +14,7 @@ set -g GHQ_SELECTOR_OPTS "--layout=top-down --prompt='ghq>'"
 # Perl
 set -x PATH $HOME/.plenv/bin $PATH
 set -x PATH $HOME/.plenv/shims $PATH
-alias reply "rlwrap reply"
+alias reply "rlwrap carton exec -- reply"
 
 # Go
 set -x GOPATH $HOME/develop
