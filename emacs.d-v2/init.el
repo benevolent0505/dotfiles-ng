@@ -164,6 +164,10 @@
   (counsel-mode 1))
 
 
+(el-get-bundle windymelt/counsel-ghq)
+(global-set-key (kbd "C-c C-g") 'counsel-ghq)
+
+
 ;; インストールしていれば counsel-M-x が勝手に使ってくれる
 (el-get-bundle amx)
 
