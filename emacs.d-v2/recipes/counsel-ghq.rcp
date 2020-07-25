@@ -1,4 +1,0 @@
-(:name counsel-ghq
-       :description "provides interfaces of ghq with ivy."
-       :type github
-       :pkgname "SuzumiyaAoba/counsel-ghq")

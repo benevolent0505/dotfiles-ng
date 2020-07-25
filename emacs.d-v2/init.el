@@ -167,10 +167,6 @@
 ;; インストールしていれば counsel-M-x が勝手に使ってくれる
 (el-get-bundle amx)
 
-(el-get-bundle counsel-ghq
-  :depends counsel
-  (global-set-key (kbd "C-x C-g") 'counsel-ghq))
-
 
 (el-get-bundle! company
   (add-hook 'after-init-hook 'global-company-mode)
