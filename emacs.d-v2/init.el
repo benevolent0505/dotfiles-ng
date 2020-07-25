@@ -47,7 +47,7 @@
 ;; Font
 ;; TODO: 設定方法を理解できていないので困まったら調べ直す
 ;; See Also: http://extra-vision.blogspot.com/2016/07/emacs.html
-(set-default-font "Source Han Code JP N-15")
+(set-default-font "Source Han Code JP N-14")
 ;; Color theme
 (el-get-bundle srcery-theme
   (load-theme 'srcery t))
