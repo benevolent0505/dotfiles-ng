@@ -115,6 +115,10 @@
   (global-set-key (kbd "C-;") 'avy-goto-word-1))
 
 
+(el-get-bundle! rg
+  (rg-enable-default-bindings))
+
+
 (el-get-bundle! keyfreq
   (keyfreq-mode 1)
   (keyfreq-autosave-mode 1))
