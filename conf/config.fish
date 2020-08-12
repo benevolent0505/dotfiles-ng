@@ -1,6 +1,7 @@
 # alias
 alias emacs "emacsclient -nw"
 alias screen "screen -U"
+alias f "open ."
 
 # 便利スクリプト置場
 set -x PATH $PATH $HOME/local/bin
