@@ -1,5 +1,4 @@
 # alias
-alias emacs "emacsclient -nw"
 alias screen "screen -U"
 alias f "open ."
 
