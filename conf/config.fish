@@ -2,6 +2,9 @@
 alias screen "screen -U"
 alias f "open ."
 
+# 変数
+set -g EDITOR "emacsclient -nw"
+
 # 便利スクリプト置場
 set -x PATH $PATH $HOME/local/bin
 
