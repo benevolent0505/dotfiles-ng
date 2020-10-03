@@ -346,16 +346,12 @@
 
 ;; JavaScript
 (el-get-bundle js2-mode
+  (setq-default js-indent-level 2)
 
-  (setq-default js2-basic-offset 2
-                js-indent-level 2)
+  (add-hook 'js-mode-hook 'js2-minor-mode)
 
-  (add-to-list 'auto-mode-alist '("\\.js?\\'" . js2-mode))
-  (add-hook 'js-mode-hook 'js2-minor-mode))
-
-(el-get-bundle rjsx-mode
-
-  (add-to-list 'auto-mode-alist '("\\.jsx?\\'" . rjsx-mode)))
+  (with-eval-after-load-feature 'lsp-mode
+    (add-hook 'js-mode-hook #'lsp)))
 
 (el-get-bundle add-node-modules-path
 
