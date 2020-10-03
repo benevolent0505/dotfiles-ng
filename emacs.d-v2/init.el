@@ -15,11 +15,6 @@
 
 (el-get-bundle tarao/el-get-lock)
 
-;; package.el で入るパッケージとかち合うので、 package-initialize よりも先に呼ぶ必要がある
-(el-get-bundle dash)
-(el-get-bundle f)
-(el-get-bundle s)
-
 ;; package.el
 (require 'package)
 (add-to-list 'package-archives
