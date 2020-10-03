@@ -23,9 +23,6 @@ alias reply "rlwrap carton exec -- reply"
 set -x GOPATH $HOME/develop
 set -x PATH $PATH $GOPATH/bin
 
-# Python
-status --is-interactive; and source (pyenv init -|psub)
-
 # Node
 status --is-interactive; and source (nodenv init -|psub)
 
