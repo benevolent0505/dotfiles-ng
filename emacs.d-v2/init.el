@@ -191,16 +191,20 @@
 (el-get-bundle amx)
 
 
-(el-get-bundle! company
-  (add-hook 'after-init-hook 'global-company-mode)
+(el-get-bundle company
+  (global-company-mode)
 
-  (setq-default company-dabbrev-downcase nil
-                company-idle-delay 0
-                company-minimum-prefix-length 2
+  (setq-default company-idle-delay 0.0
+                company-dabbrev-downcase nil
+                company-minimum-prefix-length 1
                 company-selection-wrap-around t
-                completion-ignore-case t)
+                completion-ignore-case t
+                company-transformers '(company-sort-by-occurrence))
 
-  (global-set-key (kbd "C-M-i") 'company-complete))
+  (define-key company-active-map (kbd "M-n") nil)
+  (define-key company-active-map (kbd "M-p") nil)
+  (define-key company-active-map (kbd "C-n") 'company-select-next)
+  (define-key company-active-map (kbd "C-p") 'company-select-previous))
 
 (el-get-bundle company-quickhelp
   :depends (company-mode pos-tip)
