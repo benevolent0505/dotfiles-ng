@@ -26,6 +26,9 @@ set -x PATH $PATH $GOPATH/bin
 # Python
 status --is-interactive; and source (pyenv init -|psub)
 
+# Node
+status --is-interactive; and source (nodenv init -|psub)
+
 if test -d /usr/local/opt/readline
   # readline compilers config
   set -gx LDFLAGS "-L/usr/local/opt/readline/lib"
