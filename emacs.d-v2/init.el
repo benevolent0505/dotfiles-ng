@@ -362,7 +362,10 @@
 
 ;; TypeScript
 (el-get-bundle typescript-mode
-  (add-to-list 'auto-mode-alist '("\\.ts\\'" . typescript-mode)))
+  (add-to-list 'auto-mode-alist '("\\.ts\\'" . typescript-mode))
+
+  (with-eval-after-load-feature 'lsp-mode
+    (add-hook 'typescript-mode #'lsp)))
 
 
 ;; Go
