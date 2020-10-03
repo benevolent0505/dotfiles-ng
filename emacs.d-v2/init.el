@@ -129,10 +129,6 @@
   (global-set-key (kbd "C-;") 'avy-goto-word-1))
 
 
-(el-get-bundle! rg
-  (rg-enable-default-bindings))
-
-
 (el-get-bundle! keyfreq
   (keyfreq-mode 1)
   (keyfreq-autosave-mode 1))
@@ -263,6 +259,12 @@
   (setq-default flycnheck-disabled-checkers '(emacs-lisp-checkdoc javascript-jshint javascript-jscs json-jsonlint))
 
   (add-hook 'prog-mode-hook #'flycheck-mode))
+
+
+(el-get-bundle! rg
+  :depends (transient wgrep)
+
+  (rg-enable-default-bindings))
 
 
 ;; yasnippet
