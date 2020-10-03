@@ -248,9 +248,8 @@
   (global-set-key (kbd "C-x g") 'magit-status)
   (global-set-key (kbd "C-x C-b") 'magit-blame))
 
+(el-get-lock 'transient)
 (el-get-bundle transient)
-(el-get-bundle magit-popup)
-(el-get-bundle ghub)
 
 (el-get-bundle! git-gutter+
   (global-git-gutter+-mode t))
