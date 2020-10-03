@@ -95,6 +95,7 @@
 
 
 (el-get-bundle helpful
+  :depends (dash f s)
   (global-set-key (kbd "C-h f") #'helpful-callable)
   (global-set-key (kbd "C-h v") #'helpful-variable)
   (global-set-key (kbd "C-h k") #'helpful-key)
@@ -148,7 +149,7 @@
 (el-get-lock 'swiper)
 
 (el-get-bundle counsel
-  :features (ivy ivy-hydra)
+  :features (ivy)
 
   (ivy-mode 1)
 
@@ -184,7 +185,8 @@
 
 
 ;; インストールしていれば counsel-M-x が勝手に使ってくれる
-(el-get-bundle amx)
+(el-get-bundle amx
+  :depends s)
 
 
 (el-get-bundle company
