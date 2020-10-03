@@ -48,9 +48,14 @@
 ;; TODO: 設定方法を理解できていないので困まったら調べ直す
 ;; See Also: http://extra-vision.blogspot.com/2016/07/emacs.html
 (set-frame-font "Source Han Code JP N-14")
+
 ;; Color theme
-(el-get-bundle srcery-theme
-  (load-theme 'srcery t))
+(el-get-bundle emacs-jp/replace-colorthemes
+  (add-to-list 'custom-theme-load-path
+    (file-name-as-directory (locate-user-emacs-file "el-get/replace-colorthemes")))
+
+  (load-theme 'high-contrast t)
+  (enable-theme 'high-contrast))
 
 ;; Brackets settings
 (electric-pair-mode t)
