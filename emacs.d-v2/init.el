@@ -212,6 +212,32 @@
   (company-quickhelp-mode 1))
 
 
+;; LSP Clinet
+(el-get-lock 'lsp-mode)
+(el-get-bundle! lsp-mode
+  (setq lsp-modeline-diagnostics-enable t
+        lsp-headerline-breadcrumb-enable t
+        lsp-completion-enable t)
+
+  ;; eslint setting comment out
+  ;; TODO: https://github.com/emacs-lsp/lsp-mode/issues/1932
+  ;; (setq lsp-eslint-server-command
+  ;;       `("node"
+  ;;         ,(expand-file-name
+  ;;           (car
+  ;;            (last
+  ;;             (file-expand-wildcards "~/.vscode/extensions/dbaeumer.vscode-eslint-*/server/out/eslintServer.js"))))
+  ;;         "--stdio"))
+
+  (add-hook 'before-save-hook #'lsp-format-buffer t t)
+  (add-hook 'before-save-hook #'lsp-organize-imports t t)
+  )
+
+(el-get-bundle lsp-ui)
+(el-get-bundle lsp-ivy
+  :depends (dash lsp-mode counsel))
+
+
 ;; Git
 ;; NOTE: counsel の方に git grep 等の設定があるのでそちらもチェックする
 
@@ -379,35 +405,6 @@
                 cperl-merge-trailing-else               nil
                 cperl-indent-region-fix-constructs      nil
                 cperl-max-help-size 119))
-
-
-;; LSP Clinet
-(el-get-bundle! lsp-mode
-  (defun my-lsp-mode-hook ()
-    "Hooks for lsp-mode"
-
-    (add-hook 'before-save-hook #'lsp-format-buffer t t)
-    (add-hook 'before-save-hook #'lsp-organize-imports t t)
-
-    ;; for TypeScript
-    (when (eq major-mode 'typescript-mode)
-      (add-node-modules-path)
-      (add-hook 'typescript-mode-hook #'lsp))
-
-    ;; for Golang
-    (lsp-register-custom-settings
-      '(("gopls.completeUnimported" t t)
-         ("gopls.staticcheck" t t)))
-    (add-hook 'go-mode-hook #'lsp-deferred))
-
-  (add-hook 'prog-mode-hook #'my-lsp-mode-hook))
-
-(el-get-bundle! lsp-ui
-  :depends (lsp-mode)
-  (add-hook 'lsp-mode-hook #'lsp-ui-mode))
-
-;; LSP関係はバージョン固定する
-(el-get-lock 'lsp-mode 'lsp-ui)
 
 ;; 環境固有の設定はここに入れる
 (when (file-exists-p (expand-file-name "~/.private.el"))
