@@ -69,6 +69,9 @@
 ;; バッファ移動を Meta + 矢印でも出来るように
 (windmove-default-keybindings 'meta)
 
+(setq-default default-directory "~/"
+              command-line-default-directory "~/")
+
 ;; バックアップファイルを一箇所に集める
 (add-to-list 'backup-directory-alist (cons "." (locate-user-emacs-file "backups")))
 (setq-default auto-save-file-name-transforms
