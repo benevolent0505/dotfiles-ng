@@ -229,6 +229,7 @@
                 lsp-ui-doc-max-height 150
                 lsp-ui-doc-max-width 30)
 
+  ;; https://github.com/emacs-lsp/lsp-ui/issues/123#issuecomment-384941120
   (add-hook 'lsp-ui-doc-frame-hook
             (lambda (frame _w)
               (set-face-attribute 'default frame :font "Monaco" :height 150))))
