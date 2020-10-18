@@ -220,11 +220,19 @@
   ;;             (file-expand-wildcards "~/.vscode/extensions/dbaeumer.vscode-eslint-*/server/out/eslintServer.js"))))
   ;;         "--stdio"))
 
-  (add-hook 'before-save-hook #'lsp-format-buffer t t)
-  (add-hook 'before-save-hook #'lsp-organize-imports t t)
+  (add-hook 'before-save-hook #'lsp-format-buffer)
   )
 
-(el-get-bundle lsp-ui)
+(el-get-lock 'lsp-ui)
+(el-get-bundle lsp-ui
+  (setq-default lsp-ui-doc-use-webkit t
+                lsp-ui-doc-max-height 150
+                lsp-ui-doc-max-width 30)
+
+  (add-hook 'lsp-ui-doc-frame-hook
+            (lambda (frame _w)
+              (set-face-attribute 'default frame :font "Monaco" :height 150))))
+
 (el-get-bundle lsp-ivy
   :depends (dash lsp-mode counsel))
 
