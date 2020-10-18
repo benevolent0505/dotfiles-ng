@@ -348,19 +348,25 @@
   (with-eval-after-load-feature 'lsp-mode
     (add-hook 'js-mode-hook #'lsp)))
 
+;; TypeScript
+(el-get-bundle typescript-mode
+  (add-to-list 'auto-mode-alist '("\\.tsx\\'" . typescript-mode))
+
+  (setq-default typescript-indent-level 2)
+
+  (with-eval-after-load-feature 'lsp-mode
+    (add-hook 'typescript-mode-hook #'lsp)))
+
 (el-get-bundle add-node-modules-path
   (with-eval-after-load-feature 'js2-mode
     (add-hook 'js2-mode-hook #'add-node-modules-path))
+
   (with-eval-after-load-feature 'typescript-mode
     (add-hook 'typescript-mode-hook #'add-node-modules-path)))
 
-
-;; TypeScript
-(el-get-bundle typescript-mode
-  (add-to-list 'auto-mode-alist '("\\.ts\\'" . typescript-mode))
-
-  (with-eval-after-load-feature 'lsp-mode
-    (add-hook 'typescript-mode #'lsp)))
+(el-get-bundle json-mode
+  (with-eval-after-load-feature 'flycheck
+    (add-hook 'json-mode-hook #'flycheck-mode)))
 
 
 ;; Go
