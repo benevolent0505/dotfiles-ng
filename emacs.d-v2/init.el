@@ -316,6 +316,9 @@
 (el-get-bundle davazp/graphql-mode)
 
 
+(el-get-bundle restclient)
+
+
 ;; For Jenkinsfile
 (el-get-bundle groovy-mode
   (add-to-list 'auto-mode-alist '("Jenkinsfile\\'" . groovy-mode)))
