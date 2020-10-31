@@ -224,12 +224,12 @@
 (el-get-bundle lsp-ui
   (setq-default lsp-ui-doc-use-webkit t
                 lsp-ui-doc-max-height 150
-                lsp-ui-doc-max-width 30)
+                lsp-ui-doc-max-width 200)
 
   ;; https://github.com/emacs-lsp/lsp-ui/issues/123#issuecomment-384941120
   (add-hook 'lsp-ui-doc-frame-hook
             (lambda (frame _w)
-              (set-face-attribute 'default frame :font "Monaco" :height 150))))
+              (set-face-attribute 'default frame :font "Monaco" :height 120))))
 
 (el-get-bundle lsp-ivy
   :depends (dash lsp-mode counsel))
