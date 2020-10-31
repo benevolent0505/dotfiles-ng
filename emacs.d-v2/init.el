@@ -147,11 +147,10 @@
   (ivy-mode 1)
 
   ;; ivy
-  (setq-default ivy-use-virtual-buffers t
-                enable-recursive-minibuffers t
-                ivy-height 20
-                ivy-extra-directories nil
-                ivy-count-format "(%d/%d) ")
+  (setq ivy-use-virtual-buffers t
+        ivy-count-format "(%d/%d) "
+        ivy-height 20
+        ivy-wrap t)
 
   ;; swiper
   (setq-default swiper-include-line-number-in-search t)
@@ -169,6 +168,9 @@
   (global-set-key (kbd "C-c g") 'counsel-git)
   (global-set-key (kbd "C-c j") 'counsel-git-grep)
   (global-set-key (kbd "C-c k") 'counsel-rg)
+
+  (with-eval-after-load-feature 'magit
+    (setq magit-completing-read-function 'ivy-completing-read))
 
   (counsel-mode 1))
 
