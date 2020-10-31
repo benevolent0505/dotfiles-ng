@@ -43,12 +43,7 @@
 (set-frame-font "Source Han Code JP N-14")
 
 ;; Color theme
-(el-get-bundle emacs-jp/replace-colorthemes
-  (add-to-list 'custom-theme-load-path
-    (file-name-as-directory (locate-user-emacs-file "el-get/replace-colorthemes")))
-
-  (load-theme 'high-contrast t)
-  (enable-theme 'high-contrast))
+(load-theme 'manoj-dark)
 
 ;; Brackets settings
 (electric-pair-mode t)
