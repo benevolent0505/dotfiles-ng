@@ -30,6 +30,12 @@
 (show-paren-mode t)
 (tool-bar-mode -1)
 
+;; smooth scroll
+(setq-default mouse-wheel-scroll-amount '(1 ((shift) . 1))
+              mouse-wheel-progressive-speed nil
+              mouse-wheel-follow-mouse t
+              scroll-step 1)
+
 (set-frame-parameter nil 'alpha 90)
 (set-frame-parameter nil 'fullscreen 'maximized)
 
