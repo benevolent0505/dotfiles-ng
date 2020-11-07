@@ -20,15 +20,15 @@
 (package-initialize)
 
 ;; Appearance
-(setq-default inhibit-startup-screen t
-              initial-scratch-message ""
+(setq-default initial-scratch-message ""
               indent-tabs-mode nil
               show-trailing-whitespace t  ;; TODO: prog-mode 以外は whitespace をハイライトしないようにしたい
               tab-width 2)
+
+;; UI Settings
 (menu-bar-mode -1)
-(set-scroll-bar-mode nil)
-(show-paren-mode t)
 (tool-bar-mode -1)
+(set-scroll-bar-mode nil)
 
 ;; smooth scroll
 (setq-default mouse-wheel-scroll-amount '(1 ((shift) . 1))
@@ -38,6 +38,8 @@
 
 (set-frame-parameter nil 'alpha 90)
 (set-frame-parameter nil 'fullscreen 'maximized)
+
+(show-paren-mode t)
 
 ;; Language environment
 (set-language-environment "Japanese")
