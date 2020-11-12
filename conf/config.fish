@@ -14,8 +14,7 @@ set -g fish_user_paths "/usr/local/sbin" $fish_user_paths
 set -g GHQ_SELECTOR peco
 
 # Perl
-set -x PATH $HOME/.plenv/bin $PATH
-set -x PATH $HOME/.plenv/shims $PATH
+status --is-interactive; and . (plenv init -|psub)
 alias reply "rlwrap carton exec -- reply"
 
 # Go
