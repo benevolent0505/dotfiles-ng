@@ -279,13 +279,11 @@
 ;; yasnippet
 (el-get-bundle! yasnippet
   (add-to-list 'yas-snippet-dirs (locate-user-emacs-file "snippet"))
-
   (yas-global-mode 1))
 
 (el-get-bundle yasnippet-snippets
-  :depends (yasnippet)
-
-  (add-to-list 'yas-snippet-dirs (locate-user-emacs-file "el-get/yasnippet-snippets/snippets")))
+  (with-eval-after-load-feature 'yasnippet
+    (add-to-list 'yas-snippet-dirs (locate-user-emacs-file "el-get/yasnippet-snippets/snippets"))))
 
 
 ;; Jump
