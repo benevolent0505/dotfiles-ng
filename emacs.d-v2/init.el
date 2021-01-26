@@ -55,7 +55,16 @@
 
 ;; Brackets settings
 (electric-pair-mode t)
-(el-get-bundle rainbow-delimiters
+(el-get-bundle! rainbow-delimiters
+  :features color
+
+  ;; emphasis
+  (cl-loop
+   for index from 1 to rainbow-delimiters-max-face-count
+   do
+   (let ((face (intern (format "rainbow-delimiters-depth-%d-face" index))))
+     (cl-callf color-saturate-name (face-foreground face) 30)))
+
   (add-hook 'prog-mode-hook #'rainbow-delimiters-mode))
 
 ;; Other build-in features
