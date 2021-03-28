@@ -19,6 +19,13 @@
 (require 'package)
 (package-initialize)
 
+
+;; server
+(require 'server)
+(unless (server-running-p)
+  (server-start))
+
+
 ;; Appearance
 (setq-default initial-scratch-message ""
               indent-tabs-mode nil
