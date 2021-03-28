@@ -193,9 +193,14 @@
 
   (counsel-mode 1))
 
+;; ghq support
+(el-get-bundle! analyticd/ivy-ghq)
+(global-set-key (kbd "C-c C-g") 'ivy-ghq-open)
 
-(el-get-bundle windymelt/counsel-ghq)
-(global-set-key (kbd "C-c C-g") 'counsel-ghq)
+;; xref support
+(el-get-bundle! alexmurray/ivy-xref)
+(setq xref-show-definitions-function #'ivy-xref-show-defs
+      xref-show-xrefs-function #'ivy-xref-show-xrefs)
 
 
 ;; インストールしていれば counsel-M-x が勝手に使ってくれる
