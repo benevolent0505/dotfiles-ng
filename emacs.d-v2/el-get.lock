@@ -1,9 +1,7 @@
 (setq el-get-lock-package-versions
-      '((lsp-ui :checksum "449f3a6b80a60d88c4ed300e69d64eb8e875f1c7")
-        (ddskk :checksum "5b4cd5c73e7a273d1814d83bf7534704778f2a2d")
+      '((ddskk :checksum "5b4cd5c73e7a273d1814d83bf7534704778f2a2d")
         (transient :checksum "96cec8e16e081491bd7e04880e0037bc190fae16")
-        (magit :checksum "cd9ab2c63c71cee01a7fef35f11a84f3ef5cdec2")
-        (lsp-mode :checksum "4db1151dbf1fe84769433d841e90803448b0b354")))
+        (magit :checksum "cd9ab2c63c71cee01a7fef35f11a84f3ef5cdec2")))
 (setq el-get-lock-locked-packages
-      '(lsp-ui swiper ddskk transient magit lsp-mode))
+      '(swiper ddskk transient magit))
 (setq el-get-lock-unlocked-packages 'nil)

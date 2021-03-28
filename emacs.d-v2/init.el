@@ -224,36 +224,25 @@
   (company-quickhelp-mode 1))
 
 
-;; LSP Clinet
-(el-get-lock 'lsp-mode)
-(el-get-bundle! lsp-mode
-  (setq lsp-modeline-diagnostics-enable t
-        lsp-headerline-breadcrumb-enable t
-        lsp-completion-enable t)
+;; LSP
+(el-get-bundle! lsp-mode)
+(setq lsp-enable-imenu nil
+      lsp-modeline-diagnostics-enable t
+      lsp-headerline-breadcrumb-enable t
+      lsp-completion-enable t)
 
-  ;; eslint setting comment out
-  ;; TODO: https://github.com/emacs-lsp/lsp-mode/issues/1932
-  ;; (setq lsp-eslint-server-command
-  ;;       `("node"
-  ;;         ,(expand-file-name
-  ;;           (car
-  ;;            (last
-  ;;             (file-expand-wildcards "~/.vscode/extensions/dbaeumer.vscode-eslint-*/server/out/eslintServer.js"))))
-  ;;         "--stdio"))
+(add-hook 'before-save-hook #'lsp-format-buffer)
+(add-hook 'before-save-hook #'lsp-organize-imports)
 
-  (add-hook 'before-save-hook #'lsp-format-buffer)
-  )
+(el-get-bundle lsp-ui)
+(setq-default lsp-ui-doc-use-webkit t
+              lsp-ui-doc-max-height 300
+              lsp-ui-doc-max-width 150)
 
-(el-get-lock 'lsp-ui)
-(el-get-bundle lsp-ui
-  (setq-default lsp-ui-doc-use-webkit t
-                lsp-ui-doc-max-height 150
-                lsp-ui-doc-max-width 200)
-
-  ;; https://github.com/emacs-lsp/lsp-ui/issues/123#issuecomment-384941120
-  (add-hook 'lsp-ui-doc-frame-hook
-            (lambda (frame _w)
-              (set-face-attribute 'default frame :font "Monaco" :height 120))))
+;; https://github.com/emacs-lsp/lsp-ui/issues/123#issuecomment-384941120
+(add-hook 'lsp-ui-doc-frame-hook
+          (lambda (frame _w)
+            (set-face-attribute 'default frame :font "Monaco" :height 150)))
 
 (el-get-bundle lsp-ivy
   :depends (dash lsp-mode counsel))
