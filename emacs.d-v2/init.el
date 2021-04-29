@@ -336,6 +336,11 @@
 (el-get-bundle davazp/graphql-mode)
 
 
+;; terraform
+(el-get-bundle terraform-mode)
+(add-hook 'terraform-mode-hook #'terraform-format-on-save-mode)
+
+
 (el-get-bundle restclient)
 
 
