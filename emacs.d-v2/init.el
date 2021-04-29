@@ -400,13 +400,6 @@
   (add-to-list 'auto-mode-alist '("\\.go\\'" . go-mode)))
 
 
-;; OCaml
-(el-get-bundle tuareg-mode
-  (setq-default tuareg-match-patterns-aligned t))
-
-(el-get-bundle ocp-indent)
-
-
 ;; Perl
 (el-get-bundle! cperl-mode
   (defalias 'perl-mode 'cperl-mode)
