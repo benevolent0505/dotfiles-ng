@@ -239,6 +239,10 @@
 (add-hook 'before-save-hook #'lsp-format-buffer)
 (add-hook 'before-save-hook #'lsp-organize-imports)
 
+;; Performance Tuning
+(setq gc-cons-threshold 800000000
+      read-process-output-max (* 1024 1024))
+
 (el-get-bundle lsp-ui)
 (setq-default lsp-ui-doc-use-webkit t
               lsp-ui-doc-max-height 300
