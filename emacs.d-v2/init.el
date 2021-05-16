@@ -236,9 +236,6 @@
       lsp-headerline-breadcrumb-enable t
       lsp-completion-enable t)
 
-(add-hook 'before-save-hook #'lsp-format-buffer)
-(add-hook 'before-save-hook #'lsp-organize-imports)
-
 ;; Performance Tuning
 (setq gc-cons-threshold 800000000
       read-process-output-max (* 1024 1024))
