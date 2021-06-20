@@ -134,6 +134,16 @@
                 skk-comp-prefix t
                 skk-share-private-jisyo t)
 
+  (add-hook 'dired-load-hook
+    #'(lambda ()
+        (load "dired-x")
+        (global-set-key (kbd "C-x C-j") 'skk-mode)))
+
+  ;; org-mode にすると C-j が改行に奪われている気がするのでその対応
+  (add-hook 'org-mode-hook
+    #'(lambda ()
+        (global-set-key (kbd "C-j") 'skk-mode)))
+
   (global-set-key (kbd "C-j") 'skk-mode))
 
 
