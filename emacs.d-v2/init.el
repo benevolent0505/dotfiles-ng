@@ -101,12 +101,6 @@
   `(("*" ,(expand-file-name (locate-user-emacs-file "backups")) t)))
 
 
-;; emacsclient
-(require 'server)
-(unless (server-running-p)
-  (server-start))
-
-
 (el-get-bundle tarao/with-eval-after-load-feature-el)
 
 
