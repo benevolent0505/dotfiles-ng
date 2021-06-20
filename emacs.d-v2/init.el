@@ -25,6 +25,14 @@
 (package-initialize)
 
 
+;; Emacs > 28
+(if (>= emacs-major-version 28)
+  ;; native compile setting
+  (setq comp-async-report-warnings-errors nil
+        warning-minimum-log-level :error)
+  ;; yes/no を y/n に
+  (defalias 'yes-or-no-p 'y-or-n-p))
+
 ;; server
 (require 'server)
 (unless (server-running-p)
