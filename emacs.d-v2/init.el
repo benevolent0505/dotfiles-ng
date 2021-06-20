@@ -422,29 +422,28 @@
 
 
 ;; Perl
-(el-get-bundle! cperl-mode
-  (defalias 'perl-mode 'cperl-mode)
+(defalias 'perl-mode 'cperl-mode)
 
-  (setq auto-mode-alist (cons '("\\.t$" . cperl-mode) auto-mode-alist))
-  (setq auto-mode-alist (cons '("\\.cgi$" . cperl-mode) auto-mode-alist))
-  (setq auto-mode-alist (cons '("\\.psgi$" . cperl-mode) auto-mode-alist))
-  (setq auto-mode-alist (cons '("cpanfile$" . cperl-mode) auto-mode-alist))
+(setq auto-mode-alist (cons '("\\.t$" . cperl-mode) auto-mode-alist))
+(setq auto-mode-alist (cons '("\\.cgi$" . cperl-mode) auto-mode-alist))
+(setq auto-mode-alist (cons '("\\.psgi$" . cperl-mode) auto-mode-alist))
+(setq auto-mode-alist (cons '("cpanfile$" . cperl-mode) auto-mode-alist))
 
-  (setq-default cperl-indent-level 4
-                cperl-continued-statement-offset 4
-                cperl-close-paren-offset -4
-                cperl-comment-column 119
-                cperl-highlight-variables-indiscriminately t
-                cperl-indent-parens-as-block t
-                cperl-indent-subs-specially nil
-                cperl-label-offset -4
-                cperl-tab-always-indent t
-                cperl-font-lock t
-                cperl-break-one-line-blocks-when-indent nil
-                cperl-fix-hanging-brace-when-indent     nil
-                cperl-merge-trailing-else               nil
-                cperl-indent-region-fix-constructs      nil
-                cperl-max-help-size 119))
+(setq-default cperl-indent-level 4
+  cperl-continued-statement-offset 4
+  cperl-close-paren-offset -4
+  cperl-comment-column 119
+  cperl-highlight-variables-indiscriminately t
+  cperl-indent-parens-as-block t
+  cperl-indent-subs-specially nil
+  cperl-label-offset -4
+  cperl-tab-always-indent t
+  cperl-font-lock t
+  cperl-break-one-line-blocks-when-indent nil
+  cperl-fix-hanging-brace-when-indent     nil
+  cperl-merge-trailing-else               nil
+  cperl-indent-region-fix-constructs      nil
+  cperl-max-help-size 119)
 
 ;; 環境固有の設定はここに入れる
 (when (file-exists-p (expand-file-name "~/.private.el"))
