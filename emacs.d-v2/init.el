@@ -89,8 +89,6 @@
 
 ;; Other build-in features
 
-;; yes/no を y/n に
-(defalias 'yes-or-no-p 'y-or-n-p)
 ;; バッファ移動を Meta + 矢印でも出来るように
 (windmove-default-keybindings 'meta)
 
