@@ -123,28 +123,26 @@
   (global-set-key (kbd "C-h C") #'helpful-command))
 
 ;; SKK
-(el-get-lock 'ddskk)
+;; 何故か起動時にロードされないので package.el でインストールしている
+;; (el-get-bundle ddskk)
+(setq-default skk-server-host "localhost"
+              skk-server-portnum 1178
+              skk-dcomp-activate t
+              skk-dcomp-multiple-rows 20
+              skk-comp-prefix t
+              skk-share-private-jisyo t)
 
-;; TODO: AquaSKKと辞書を共有する方法を調べる
-(el-get-bundle ddskk
-  (setq-default skk-server-host "localhost"
-                skk-server-portnum 1178
-                skk-dcomp-activate t
-                skk-dcomp-multiple-rows 20
-                skk-comp-prefix t
-                skk-share-private-jisyo t)
+(add-hook 'dired-load-hook
+  #'(lambda ()
+      (load "dired-x")
+      (global-set-key (kbd "C-x C-j") 'skk-mode)))
 
-  (add-hook 'dired-load-hook
-    #'(lambda ()
-        (load "dired-x")
-        (global-set-key (kbd "C-x C-j") 'skk-mode)))
+;; org-mode にすると C-j が改行に奪われている気がするのでその対応
+(add-hook 'org-mode-hook
+  #'(lambda ()
+      (global-set-key (kbd "C-j") 'skk-mode)))
 
-  ;; org-mode にすると C-j が改行に奪われている気がするのでその対応
-  (add-hook 'org-mode-hook
-    #'(lambda ()
-        (global-set-key (kbd "C-j") 'skk-mode)))
-
-  (global-set-key (kbd "C-j") 'skk-mode))
+(global-set-key (kbd "C-j") 'skk-mode)
 
 
 (el-get-bundle ace-window
