@@ -449,6 +449,19 @@
   cperl-indent-region-fix-constructs      nil
   cperl-max-help-size 119)
 
+;; Documentation
+(el-get-bundle! org-roam)
+(setq-default org-roam-directory "~/local/org-roam"
+              org-roam-completion-everywhere t
+              org-roam-v2-ack t)
+(org-roam-setup)
+(global-set-key (kbd "C-c n l") 'org-roam-buffer-toggle)
+(global-set-key (kbd "C-c n f") 'org-roam-node-find)
+(global-set-key (kbd "C-c n g") 'org-roam-graph)
+(global-set-key (kbd "C-c n i") 'org-roam-node-insert)
+(global-set-key (kbd "C-c n c") 'org-roam-capture)
+(define-key org-mode-map (kbd "C-M-i") 'complition-at-point)
+
 ;; 環境固有の設定はここに入れる
 (when (file-exists-p (expand-file-name "~/.private.el"))
   (load (expand-file-name "~/.private.el")))
