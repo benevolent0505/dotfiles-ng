@@ -75,8 +75,7 @@
 (when (< emacs-major-version 28)
   (el-get-bundle! modus-themes)
   (setq-default modus-themes-italic-constructs t
-                modus-themes-bold-constructs
-                modus-themes-region '(bg-only no-extend))
+                modus-themes-bold-constructs)
   (modus-themes-load-themes)
   (modus-themes-load-vivendi))
 
