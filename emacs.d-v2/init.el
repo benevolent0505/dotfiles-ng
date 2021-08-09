@@ -71,7 +71,15 @@
 (set-frame-font "Source Han Code JP N-14")
 
 ;; Color theme
-(load-theme 'manoj-dark)
+;; Emacs 27 以下には modus theme が含まれていない
+(if (< emacs-major-version 28)
+  (el-get-bundle! modus-themes)
+  (setq-default modus-themes-italic-constructs t
+                modus-themes-bold-constructs
+                modus-themes-region '(bg-only no-extend))
+  (modus-themes-load-themes)
+  (modus-themes-load-vivendi))
+
 
 ;; Brackets settings
 (electric-pair-mode t)
